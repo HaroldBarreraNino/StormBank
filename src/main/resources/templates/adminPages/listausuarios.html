@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-4">
+  <a th:href="@{/admin/newusuario}" class="btn btn-primary">CREAR</a>
+  <br><br>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>NOMBRE</th>
+      <th>APELLIDO</th>
+      <th>USERNAME</th>
+      <th>CLAVE</th>
+      <th>ACCIONES</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="usuario:${usuarios}">
+      <td th:text="${usuario.idusuario}"></td>
+      <td th:text="${usuario.nombre}"></td>
+      <td th:text="${usuario.apellido}"></td>
+      <td th:text="${usuario.username}"></td>
+      <td th:text="${usuario.clave}"></td>
+      <td>
+        <a th:href="@{/admin/updateusuario/}+${usuario.idusuario}" class="btn btn-warning">EDITAR</a>
+        <a th:href="@{/admin/deleteusuario/}+${usuario.idusuario}" class="btn btn-danger">ELIMINAR</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

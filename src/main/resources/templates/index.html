@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-4">
+    <h1 class="text-center">STORM BANK</h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">STORM BANK</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/user/login}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/user/register}">Register</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="data:image/png;base64,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" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="https://img.freepik.com/free-vector/banking-app-interface-screens_23-2148604478.jpg?w=2000" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="https://www.twaino.com/wp-content/uploads/2022/03/User-Friendly-1.png" alt="Third slide">
+            </div>
+        </div>
+    </div>
+</div>
+<footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+    <div class="container text-center">
+        <small>Copyright &copy; Universidad San Buenaventura</small>
+    </div>
+</footer>
+</body>
+</html>

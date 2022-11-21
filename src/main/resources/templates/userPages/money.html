@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tu cuenta bancaria</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-6">
+    <a th:href="@{/}" class="btn btn-danger mx-10 my-10">Cerrar sesion</a>
+    <h1>TU SALDO ES DE:</h1>
+    <div class="container border border-info rounded">
+        <h1 th:text="${saldo.dinero}" class="display-1"></h1>
+        <a th:href="@{/admin/updatesaldo/}+${saldo.idsaldo}" class="btn btn-info mx-10 my-10">CARGAR CUENTA</a>
+        <a th:href="@{/admin/sendsaldo/}+${saldo.idsaldo}" class="btn btn-warning mx-10 my-10">ENVIAR DINERO</a>
+    </div>
+</div>
+</body>
+</html>
